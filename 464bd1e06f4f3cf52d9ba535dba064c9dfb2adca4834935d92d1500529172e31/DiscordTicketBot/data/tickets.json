@@ -1,0 +1,36 @@
+{
+  "1341180381893754980": {
+    "1355597687789191310": {
+      "user_id": "1080896815987183616",
+      "panel_id": "960d31a5-1391-4086-a084-7e6842432d20",
+      "channel_id": "1355597687789191310",
+      "status": "closed",
+      "priority": "none",
+      "claimed_by": null,
+      "created_at": "2025-03-29T17:41:14.782537",
+      "closed_at": "2025-03-29T17:41:45.316750",
+      "closed_by": "1080896815987183616",
+      "close_reason": "Ticket fechado sem motivo especificado.",
+      "last_activity": "2025-03-29T17:41:40.491965",
+      "added_users": [],
+      "channel_deleted": true,
+      "deleted_at": "2025-03-29T17:41:56.474719"
+    },
+    "1355597835461988545": {
+      "user_id": "1080896815987183616",
+      "panel_id": "960d31a5-1391-4086-a084-7e6842432d20",
+      "channel_id": "1355597835461988545",
+      "status": "closed",
+      "priority": "none",
+      "claimed_by": null,
+      "created_at": "2025-03-29T17:41:49.904534",
+      "closed_at": "2025-03-29T17:41:57.941092",
+      "closed_by": "1080896815987183616",
+      "close_reason": "Ticket fechado sem motivo especificado.",
+      "last_activity": "2025-03-29T17:41:49.904541",
+      "added_users": [],
+      "channel_deleted": true,
+      "deleted_at": "2025-03-29T17:42:09.196287"
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "1350552926094888982": {
+    "settings": {
+      "allow_member_close": true,
+      "show_priority_button": true,
+      "show_notify_button": true,
+      "show_archive_button": true,
+      "show_claim_button": true,
+      "show_transcript_button": true,
+      "auto_archive_on_close": true,
+      "notify_on_ticket_open": true,
+      "max_tickets_per_user": 1,
+      "inactivity_close_time": 78,
+      "require_reason_on_close": false,
+      "ticket_name_format": "ticket-{number}-{category}"
+    },
+    "last_ticket_number": 6
+  },
+  "1337105458607030374": {
+    "settings": {
+      "allow_member_close": false,
+      "show_priority_button": true,
+      "show_notify_button": true,
+      "show_archive_button": true,
+      "show_claim_button": true,
+      "show_transcript_button": true,
+      "auto_archive_on_close": false,
+      "notify_on_ticket_open": true,
+      "max_tickets_per_user": 1,
+      "inactivity_close_time": 72,
+      "require_reason_on_close": true,
+      "ticket_name_format": "\ud83e\udd1d\u2503parceria {user}"
+    },
+    "last_ticket_number": 8
+  },
+  "1353358375106117705": {
+    "settings": {
+      "allow_member_close": false,
+      "show_priority_button": true,
+      "show_notify_button": true,
+      "show_archive_button": true,
+      "show_claim_button": true,
+      "show_transcript_button": true,
+      "auto_archive_on_close": false,
+      "notify_on_ticket_open": false,
+      "max_tickets_per_user": 1,
+      "inactivity_close_time": 72,
+      "require_reason_on_close": false,
+      "ticket_name_format": "ticket-{number}"
+    }
+  },
+  "1355640623058780170": {
+    "settings": {
+      "allow_member_close": false,
+      "show_priority_button": false,
+      "show_notify_button": false,
+      "show_archive_button": false,
+      "show_claim_button": false,
+      "show_transcript_button": false,
+      "auto_archive_on_close": false,
+      "notify_on_ticket_open": true,
+      "max_tickets_per_user": 1,
+      "inactivity_close_time": 72,
+      "require_reason_on_close": true,
+      "ticket_name_format": "ticket-{number}"
+    },
+    "last_ticket_number": 1
+  },
+  "1354166953799061704": {
+    "settings": {
+      "allow_member_close": false,
+      "show_priority_button": true,
+      "show_notify_button": true,
+      "show_archive_button": true,
+      "show_claim_button": true,
+      "show_transcript_button": true,
+      "auto_archive_on_close": false,
+      "notify_on_ticket_open": false,
+      "max_tickets_per_user": 1,
+      "inactivity_close_time": 72,
+      "require_reason_on_close": false,
+      "ticket_name_format": "ticket-{number}"
+    }
+  },
+  "1355642536936472647": {
+    "settings": {
+      "allow_member_close": true,
+      "show_priority_button": true,
+      "show_notify_button": true,
+      "show_archive_button": true,
+      "show_claim_button": true,
+      "show_transcript_button": true,
+      "auto_archive_on_close": true,
+      "notify_on_ticket_open": true,
+      "max_tickets_per_user": 1,
+      "inactivity_close_time": 72,
+      "require_reason_on_close": true,
+      "ticket_name_format": "ticket-{number}"
+    },
+    "last_ticket_number": 2
+  },
+  "1355642865300144331": {
+    "settings": {
+      "allow_member_close": false,
+      "show_priority_button": true,
+      "show_notify_button": true,
+      "show_archive_button": true,
+      "show_claim_button": true,
+      "show_transcript_button": true,
+      "auto_archive_on_close": false,
+      "notify_on_ticket_open": false,
+      "max_tickets_per_user": 1,
+      "inactivity_close_time": 72,
+      "require_reason_on_close": false,
+      "ticket_name_format": "ticket-{number}"
+    }
+  },
+  "1290856602219446362": {
+    "settings": {
+      "allow_member_close": true,
+      "show_priority_button": true,
+      "show_notify_button": true,
+      "show_archive_button": true,
+      "show_claim_button": true,
+      "show_transcript_button": true,
+      "auto_archive_on_close": false,
+      "notify_on_ticket_open": true,
+      "max_tickets_per_user": 1,
+      "inactivity_close_time": 0,
+      "require_reason_on_close": true,
+      "ticket_name_format": "ticket-{number}"
+    },
+    "last_ticket_number": 3
+  }
+}

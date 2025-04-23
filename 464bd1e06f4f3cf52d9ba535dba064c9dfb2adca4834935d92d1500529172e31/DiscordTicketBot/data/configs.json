@@ -1,0 +1,34 @@
+{
+  "1341180381893754980": {
+    "settings": {
+      "allow_member_close": true,
+      "show_priority_button": true,
+      "show_notify_button": true,
+      "show_archive_button": true,
+      "show_claim_button": true,
+      "show_transcript_button": true,
+      "auto_archive_on_close": false,
+      "notify_on_ticket_open": true,
+      "max_tickets_per_user": 2,
+      "inactivity_close_time": 24,
+      "require_reason_on_close": false
+    },
+    "last_ticket_number": 7
+  },
+  "1350552926094888982": {
+    "settings": {
+      "allow_member_close": false,
+      "show_priority_button": true,
+      "show_notify_button": true,
+      "show_archive_button": true,
+      "show_claim_button": true,
+      "show_transcript_button": true,
+      "auto_archive_on_close": false,
+      "notify_on_ticket_open": false,
+      "max_tickets_per_user": 1,
+      "inactivity_close_time": 72,
+      "require_reason_on_close": false,
+      "ticket_name_format": "ticket-{number}"
+    }
+  }
+}

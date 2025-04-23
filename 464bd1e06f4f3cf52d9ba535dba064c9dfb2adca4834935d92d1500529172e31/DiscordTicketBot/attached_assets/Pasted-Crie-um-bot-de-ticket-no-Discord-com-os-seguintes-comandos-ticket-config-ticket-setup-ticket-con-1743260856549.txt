@@ -1,0 +1,261 @@
+Crie um bot de ticket no Discord com os seguintes comandos: ticket-config, ticket-setup.
+
+ticket-config: Ele envia um painel efêmero com botões para criar, editar, apagar painéis e outros botões que você achar interessante.
+
+O botão para criar painel edita a mensagem e envia vários botões para configurar aquele painel de ticket: botão para configurar o título, botão para configurar a descrição do painel, botão para configurar a cor (por dropdown), botão para configurar o cargo de suporte (por dropdown), botão para configurar a categoria (por dropdown), botão para configurar a aparência. Quando o botão de aparência é pressionado, ele edita a mensagem e envia outro painel com botões para configurar a cor do painel dentro do ticket, configurar se o ticket será aberto por botão ou menu suspenso (o usuário pode escolher as opções que desejar no dropdown, com um máximo de 25), configurar o emoji do botão de abrir ticket e a cor também.
+
+Outros botões devem ativar funcionalidades dentro do ticket, como: botão para atender, botão para adicionar o ticket à prioridade ou não, botão para transferir, botão para arquivar, botão para notificar o usuário, botão para adicionar usuário (e de remover usuário também), botão para permitir se membros podem fechar o ticket ou apenas administradores, opção para configurar mensagem de logs (criar um painel para configurar logs também), e um botão de voltar para configurar outras coisas. Também deve haver um botão para configurar as mensagens dos painéis e as mensagens enviadas.
+
+Além disso, crie um botão para configurações avançadas, onde será possível configurar os nomes dos canais de ticket, definir a quantidade de tickets que um usuário pode abrir e configurar se o ticket será fechado por inatividade.
+
+Crie em Python e em um arquivo separado para configurar todos os emojis. Não utilize comentários no código.
+
+
+
+Detalhamento Completo do Bot de Tickets para Discord
+Comandos Slash
+1. /ticket-config
+Função: Abre o painel de configuração do sistema de tickets
+Permissão necessária: Administrador
+Visibilidade: Apenas para quem executou (ephemeral)
+Botões no painel principal:
+"Criar Painel" (verde com emoji ➕) - Inicia o processo de criação de um novo painel
+"Editar Painel" (azul com emoji ✏️) - Abre a lista de painéis para edição
+"Excluir Painel" (vermelho com emoji 🗑️) - Abre a lista de painéis para exclusão
+"Configurações Avançadas" (cinza com emoji ⚙️) - Abre o menu de configurações avançadas do sistema
+2. /ticket-setup
+Função: Cria um painel de tickets diretamente no canal atual
+Permissão necessária: Administrador
+Parâmetros:
+"título" (obrigatório) - Título do painel
+"descrição" (opcional) - Descrição do painel
+"cargo" (opcional) - Cargo que será notificado
+"categoria" (opcional) - Categoria onde os tickets serão criados
+Painel de Configuração de Tickets
+1. Menu "Criar Painel"
+Embed: Mostra o título "Criação de Painel de Tickets" e instruções
+Botões:
+"Configurar Título" (cinza com emoji 📝) - Abre modal para definir o título do painel
+"Configurar Descrição" (cinza com emoji 📄) - Abre modal para definir a descrição
+"Configurar Cor" (cinza com emoji 🎨) - Abre seletor de cores
+"Configurar Cargo" (cinza com emoji 👥) - Abre seletor de cargos
+"Configurar Categoria" (cinza com emoji 📁) - Abre seletor de categorias
+"Configurar Aparência" (cinza com emoji 🎭) - Abre menu de configuração de aparência
+"Config. Avançadas" (cinza com emoji ⚙️) - Abre configurações avançadas
+"Salvar" (verde com emoji 💾) - Salva o painel e gera os componentes
+"Cancelar" (vermelho com emoji ❌) - Cancela a criação do painel
+1.1. Modal "Configurar Título"
+Campo: "Título" (máx. 100 caracteres)
+Valor padrão: "Painel de Ticket"
+1.2. Modal "Configurar Descrição"
+Campo: "Descrição" (máx. 1000 caracteres, estilo parágrafo)
+Valor padrão: "Clique no botão abaixo para abrir um ticket."
+1.3. Seletor "Configurar Cor"
+Opções:
+🔴 Vermelho
+🟢 Verde
+🔵 Azul (padrão)
+🟡 Amarelo
+🟣 Roxo
+⚫ Preto
+⚪ Branco
+Botão adicional: "Voltar" (vermelho com emoji ⬅️)
+1.4. Seletor "Configurar Cargo"
+Lista: Todos os cargos do servidor que podem ser mencionados
+Botão adicional: "Voltar" (vermelho com emoji ⬅️)
+1.5. Seletor "Configurar Categoria"
+Lista: Todas as categorias do servidor
+Botão adicional: "Voltar" (vermelho com emoji ⬅️)
+1.6. Menu "Configurar Aparência"
+Embed: Mostra as configurações atuais de aparência
+Botões:
+"Alternar para Dropdown/Botão" (cinza com emoji 🔄) - Muda o tipo de interação
+Se tipo = botão:
+"Estilo do Botão" (cinza com emoji 🎨) - Abre seletor de estilo
+"Emoji do Botão" (cinza com emoji 😀) - Abre modal para definir emoji
+"Texto do Botão" (cinza com emoji 📝) - Abre modal para definir texto
+Se tipo = dropdown:
+"Placeholder do Dropdown" (cinza com emoji 📝) - Abre modal para definir placeholder
+"Opções do Dropdown" (cinza com emoji 📋) - Abre menu de opções do dropdown
+"Voltar" (vermelho com emoji ⬅️) - Volta ao menu de configuração do painel
+1.6.1. Seletor "Estilo do Botão"
+Opções:
+Azul (primary) - padrão
+Verde (success)
+Vermelho (danger)
+Cinza (secondary)
+Botão adicional: "Voltar" (vermelho com emoji ⬅️)
+1.6.2. Modal "Emoji do Botão"
+Campo: "Emoji" (máx. 5 caracteres)
+Valor padrão: 🎫
+1.6.3. Modal "Texto do Botão"
+Campo: "Texto" (máx. 80 caracteres)
+Valor padrão: "Abrir Ticket"
+1.6.4. Modal "Placeholder do Dropdown"
+Campo: "Placeholder" (máx. 100 caracteres)
+Valor padrão: "Selecione uma opção"
+1.6.5. Menu "Opções do Dropdown"
+Embed: Lista as opções atuais do dropdown
+Botões:
+"Adicionar Opção" (verde com emoji ➕) - Abre modal para adicionar opção
+"Editar Opção" (azul com emoji ✏️) - Abre seletor de opções para editar
+"Remover Opção" (vermelho com emoji 🗑️) - Abre seletor de opções para remover
+"Voltar" (vermelho com emoji ⬅️) - Volta ao menu de configuração de aparência
+1.6.5.1. Modal "Adicionar Opção ao Dropdown"
+Campos:
+"Título da Opção" (máx. 100 caracteres, obrigatório)
+"Valor da Opção (ID interno)" (máx. 100 caracteres, obrigatório)
+"Descrição da Opção" (máx. 100 caracteres, obrigatório)
+"Emoji da Opção" (máx. 5 caracteres, opcional)
+1.6.5.2. Seletor "Editar Opção" e Modal de edição
+Lista: Todas as opções atuais do dropdown
+Modal após seleção:
+"Título da Opção" (máx. 100 caracteres)
+"Valor da Opção (ID interno)" (máx. 100 caracteres)
+"Descrição da Opção" (máx. 100 caracteres)
+"Emoji da Opção" (máx. 5 caracteres)
+1.6.5.3. Seletor "Remover Opção"
+Lista: Todas as opções atuais do dropdown
+Confirmação: Ao selecionar, remove a opção e retorna ao menu de opções
+2. Menu "Editar Painel"
+Embed: Lista os painéis existentes com título e data de criação
+Seletor: Todos os painéis do servidor
+Após seleção: Abre o mesmo menu de "Criar Painel" com os dados do painel selecionado
+3. Menu "Excluir Painel"
+Embed: Lista os painéis existentes
+Seletor: Todos os painéis do servidor
+Confirmação: Ao selecionar, pede confirmação antes de excluir
+4. Menu "Configurações Avançadas"
+Embed: Mostra as configurações atuais do sistema de tickets
+Botões:
+"Tickets por Usuário" (cinza com emoji 🎟️) - Abre modal para configurar o limite
+"Fechamento por Membros" (cinza com emoji 🚪) - Ativa/desativa fechamento por membros
+"Inatividade" (cinza com emoji ⏱️) - Abre modal para configurar fechamento por inatividade
+"Arquivamento Auto." (cinza com emoji 📂) - Ativa/desativa arquivamento automático
+"Exigir Motivo" (cinza com emoji 📝) - Ativa/desativa exigência de motivo ao fechar
+"Notificar ao Abrir" (cinza com emoji 🔔) - Ativa/desativa notificação ao abrir tickets
+"Visibilidade Botões" (cinza com emoji 👁️) - Abre menu de visibilidade dos botões
+"Voltar" (vermelho com emoji ⬅️) - Volta ao menu principal de configuração
+4.1. Modal "Tickets por Usuário"
+Campo: "Máximo de Tickets por Usuário" (1-10)
+Valor padrão: 1
+4.2. Modal "Fechamento por Inatividade"
+Campo: "Horas de Inatividade" (0-720, onde 0 desativa)
+Valor padrão: 72 horas
+4.3. Menu "Visibilidade Botões"
+Embed: Status atual de visibilidade de cada botão
+Botões (verde se ativo, cinza se inativo):
+"Prioridade" (emoji 🔺) - Alterna visibilidade do botão de prioridade
+"Notificação" (emoji 🔔) - Alterna visibilidade do botão de notificação
+"Arquivar" (emoji 📂) - Alterna visibilidade do botão de arquivamento
+"Atender" (emoji 👋) - Alterna visibilidade do botão de atender
+"Transcrição" (emoji 📝) - Alterna visibilidade do botão de transcrição
+"Voltar" (vermelho com emoji ⬅️) - Volta ao menu de configurações avançadas
+Painéis de Tickets em Canais
+1. Painel com Botão
+Embed: Mostra o título e descrição configurados
+Cor: A cor configurada
+Botão: Com o estilo, emoji e texto configurados
+Função do botão: Ao clicar, abre um novo ticket
+2. Painel com Dropdown
+Embed: Mostra o título e descrição configurados
+Cor: A cor configurada
+Dropdown: Com o placeholder e as opções configuradas
+Função do dropdown: Ao selecionar uma opção, abre um novo ticket com o tipo selecionado
+Interface dos Tickets Criados
+1. Canal de Ticket
+Nome do canal: Formato "ticket-{número}" ou personalizado
+Permissões: Visível apenas para o criador, equipe de suporte e administradores
+Mensagem inicial: Embed com informações do ticket e instruções
+2. Botões no Ticket
+Todos podem ser ativados/desativados nas configurações avançadas:
+
+"Fechar Ticket" (vermelho com emoji 🔒) - Fecha o ticket (com modal para motivo se configurado)
+"Priorizar" (cinza ou colorido baseado na prioridade, emoji 🔺) - Define a prioridade do ticket
+"Notificar" (cinza com emoji 🔔) - Notifica a equipe de suporte
+"Arquivar" (cinza com emoji 📂) - Arquiva o ticket sem fechá-lo
+"Atender" (verde com emoji 👋) - Marca o ticket como sendo atendido por quem clicou
+"Adicionar Usuário" (cinza com emoji 👥) - Abre modal para adicionar usuário ao ticket
+"Transcrição" (cinza com emoji 📝) - Gera uma transcrição do ticket
+2.1. Modal "Fechar Ticket" (se configurado para exigir motivo)
+Campo: "Motivo do Fechamento" (máx. 1000 caracteres)
+Ação após envio: Fecha o ticket, registra o motivo no log
+2.2. Modal "Adicionar Usuário"
+Campo: "ID do Usuário ou Menção"
+Ação após envio: Adiciona o usuário especificado ao ticket
+3. Funções Automáticas
+Fechamento automático por inatividade (se configurado)
+Arquivamento automático ao fechar (se configurado)
+Notificação ao abrir ticket (se configurado)
+Sistema de Armazenamento
+1. Arquivos de Dados (JSON)
+panels.json: Armazena todos os painéis configurados
+tickets.json: Armazena tickets ativos e seus dados
+configs.json: Armazena configurações globais do sistema
+2. Estrutura de Dados
+2.1. Painéis (panels.json)
+{
+  "guild_id": {
+    "panel_id": {
+      "id": "panel_id",
+      "title": "Título do painel",
+      "description": "Descrição do painel",
+      "color": "azul",
+      "support_role_id": "id_do_cargo",
+      "category_id": "id_da_categoria",
+      "interaction_type": "button | dropdown",
+      "button_style": "primary | success | danger | secondary",
+      "button_emoji": "emoji",
+      "button_text": "texto do botão",
+      "dropdown_placeholder": "placeholder do dropdown",
+      "dropdown_options": [
+        {
+          "label": "título da opção",
+          "value": "valor_interno",
+          "description": "descrição da opção",
+          "emoji": "emoji"
+        }
+      ],
+      "creator_id": "id_do_criador",
+      "guild_id": "id_do_servidor",
+      "created_at": "data_iso"
+    }
+  }
+}
+2.2. Tickets (tickets.json)
+{
+  "guild_id": {
+    "channel_id": {
+      "user_id": "id_do_usuário",
+      "panel_id": "id_do_painel",
+      "channel_id": "id_do_canal",
+      "status": "open | closed | archived",
+      "priority": "none | low | medium | high",
+      "claimed_by": "id_do_atendente",
+      "created_at": "data_iso",
+      "closed_at": "data_iso",
+      "closed_by": "id_de_quem_fechou",
+      "close_reason": "motivo do fechamento",
+      "last_activity": "data_iso",
+      "added_users": ["id_usuario1", "id_usuario2"]
+    }
+  }
+}
+2.3. Configurações (configs.json)
+{
+  "settings": {
+    "allow_member_close": false,
+    "show_priority_button": true,
+    "show_notify_button": true,
+    "show_archive_button": true,
+    "show_claim_button": true,
+    "show_transcript_button": true,
+    "auto_archive_on_close": false,
+    "notify_on_ticket_open": false,
+    "max_tickets_per_user": 1,
+    "inactivity_close_time": 72,
+    "require_reason_on_close": false
+  }
+}
+Essa é a descrição detalhada de todas as funcionalidades, botões, modais, dropdowns e operações que compõem o sistema completo do bot de tickets.
+

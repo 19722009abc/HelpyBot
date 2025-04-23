@@ -1,0 +1,56 @@
+{
+  "1350552926094888982": {},
+  "1337105458607030374": {
+    "1357188702220325036": {
+      "user_id": "1080896815987183616",
+      "panel_id": "bd21ad7c-4165-43a4-8ae2-72260c2f2e62",
+      "channel_id": "1357188702220325036",
+      "status": "archived",
+      "priority": "none",
+      "claimed_by": null,
+      "created_at": "2025-04-03T00:03:22.157334",
+      "closed_at": null,
+      "closed_by": null,
+      "close_reason": null,
+      "last_activity": "2025-04-03T11:08:28.953540",
+      "added_users": []
+    }
+  },
+  "1355640623058780170": {},
+  "1355642536936472647": {
+    "1355651061800501349": {
+      "user_id": "1333578813149548698",
+      "panel_id": "b7be5dbf-3638-45e3-8884-f8fd56172b32",
+      "channel_id": "1355651061800501349",
+      "status": "closed",
+      "priority": "none",
+      "claimed_by": "1049704091741335562",
+      "created_at": "2025-03-29T18:13:20.263607",
+      "closed_at": "2025-03-29T18:26:20.967096",
+      "closed_by": "1333578813149548698",
+      "close_reason": "Ticket fechado sem motivo especificado.",
+      "last_activity": "2025-03-29T18:25:33.458614",
+      "added_users": [
+        "1333578813149548698",
+        "1049704091741335562"
+      ]
+    },
+    "1355655974966395161": {
+      "user_id": "1333578813149548698",
+      "panel_id": "a6b9b87c-e8e1-46c1-95ca-dfe2c3c6fc29",
+      "channel_id": "1355655974966395161",
+      "status": "archived",
+      "priority": "high",
+      "claimed_by": null,
+      "created_at": "2025-03-29T18:32:51.430867",
+      "closed_at": null,
+      "closed_by": null,
+      "close_reason": null,
+      "last_activity": "2025-03-29T18:46:04.672522",
+      "added_users": [
+        "1049704091741335562"
+      ]
+    }
+  },
+  "1290856602219446362": {}
+}
